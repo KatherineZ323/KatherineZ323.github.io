@@ -89,9 +89,12 @@
 
     /* ── ABOUT ── */
     #about {
-      background:var(--white);
-      display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start;
-      padding:6rem 4rem;
+    background:var(--white);
+    padding:6rem 4rem;
+    }
+    .about-top {
+    display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;
+    margin-bottom:5rem;
     }
     .about-text p { color:var(--mid-gray);line-height:1.8;margin-bottom:1.2rem;font-size:1rem; }
     .about-right { display:flex;flex-direction:column;gap:2rem; }
@@ -110,6 +113,15 @@
     .edu-degree { font-weight:600;font-size:0.95rem; }
     .edu-school { color:var(--mid-gray);font-size:0.85rem;margin-top:0.2rem; }
     .edu-desc { color:var(--mid-gray);font-size:0.82rem;margin-top:0.3rem;line-height:1.5; }
+    .about-photos { position:relative; height:460px; }
+    .about-photo { position:absolute; border-radius:20px; overflow:hidden; box-shadow:0 16px 48px rgba(0,0,0,0.12); transition:transform 0.3s; }
+    .about-photo:hover { transform:scale(1.02) rotate(0deg) !important; }
+    .about-photo img { width:100%; height:100%; object-fit:cover; object-position:center top; display:block; }
+    .photo-main { width:260px; height:340px; top:0; left:40px; transform:rotate(-2deg); z-index:2; }
+    .photo-dog { width:220px; height:260px; bottom:0; right:20px; transform:rotate(2.5deg); z-index:3; border:4px solid var(--white); }
+    .photo-caption { position:absolute; bottom:-12px; right:10px; background:var(--white); border-radius:100px; padding:0.35rem 0.9rem; font-size:0.75rem; font-weight:600; color:var(--mid-gray); box-shadow:0 4px 16px rgba(0,0,0,0.1); z-index:4; white-space:nowrap; }
+    .photo-sticker { position:absolute; top:-16px; left:20px; background:var(--sage-light); border-radius:100px; padding:0.35rem 0.9rem; font-size:0.75rem; font-weight:600; color:var(--sage-dark); z-index:4; }
+    .about-bottom { display:grid; grid-template-columns:1fr 1fr; gap:4rem; padding-top:4rem; border-top:1px solid var(--light-gray); }
 
     /* ── WORK ── */
     #work { background:var(--cream);padding:6rem 4rem; }
@@ -293,30 +305,45 @@
 
 <!-- ABOUT -->
 <section id="about">
+  <div class="about-top">
   <div class="about-text reveal">
     <div class="section-label">About Me</div>
     <h2 class="section-title">Design with<br><em style="font-family:'DM Serif Display',serif;font-style:italic;">purpose</em></h2>
     <p>I'm a product designer and strategist who cares deeply about how technology shapes everyday human experiences — especially building systems that are thoughtful, inclusive, and accessible to people with different abilities and backgrounds.</p>
-    <p>My background spans interaction design, product strategy, UX research, and agile planning. I thrive at the intersection of design and product management, translating research insights into meaningful, well-executed experiences.</p>
-    <p>Currently pursuing a Master of Professional Studies in Information Science at Cornell University, building on a B.S. in Informatics from the University of Washington. Outside of work, I love hiking, skiing, traveling, and discovering new cuisines — and I'm a proud dog person.</p>
+    <p>My background spans UI/UX design, interaction design, product strategy, UX research, and agile planning. I’m especially strong at turning ambiguous ideas into clear user flows, polished interfaces, and rapid prototypes that help teams test, communicate, and iterate quickly. I thrive at the intersection of design and product management, translating research insights into meaningful, well-executed digital experiences.</p>
+    <p>I recently graduated from Cornell University with a Master of Professional Studies in Information Science, building on a B.S. in Informatics from the University of Washington. Outside of work, I love hiking, skiing, traveling, and discovering new cuisines — and I'm a proud dog person.</p>
     <br/>
     <a href="https://4d241fcc-e3b7-46f2-bdad-4612895bc294.filesusr.com/ugd/7f7c60_167bdbc7467d4dafa33e836a0bc2f8b8.pdf" target="_blank" class="btn-primary" style="width:fit-content;">View Resume ↗</a>
+</div>
+
+  <!-- Photo collage -->
+  <div class="about-photos reveal">
+    <div class="about-photo photo-main">
+      <img src="pic.jpg" alt="Katherine Zhang" />
+    </div>
+    <div class="about-photo photo-dog">
+      <img src="dog.jpg" alt="Katherine and her dog" />
+      <div class="photo-caption">🐾 my little buddy - Lucky</div>
+    </div>
+    <div class="photo-sticker">✦ Cornell MPS '26</div>
   </div>
-  <div class="about-right reveal">
-    <div>
+  </div>
+
+  <div class="about-bottom">
+    <div class="reveal">
       <div class="section-label">Skills</div>
       <div class="skills-grid">
-        <div class="skill-chip">🎨 Figma</div>
-        <div class="skill-chip">🔍 UX Research</div>
-        <div class="skill-chip">📐 Interaction Design</div>
-        <div class="skill-chip">♿ Accessibility</div>
-        <div class="skill-chip">📊 Product Strategy</div>
-        <div class="skill-chip">🧪 Prototyping</div>
-        <div class="skill-chip">🗂 Agile Planning</div>
-        <div class="skill-chip">📝 Design Systems</div>
+        <div class="skill-chip">Figma</div>
+        <div class="skill-chip">UX Research</div>
+        <div class="skill-chip">Interaction Design</div>
+        <div class="skill-chip">Accessibility</div>
+        <div class="skill-chip">Product Strategy</div>
+        <div class="skill-chip">Prototyping</div>
+        <div class="skill-chip">Agile Planning</div>
+        <div class="skill-chip">Design Systems</div>
       </div>
     </div>
-    <div>
+    <div class="reveal">
       <div class="section-label">Education</div>
       <div class="education-block">
         <div class="edu-item">
@@ -331,7 +358,7 @@
           <div class="edu-year">2021–2025</div>
           <div>
             <div class="edu-degree">B.S. Informatics</div>
-            <div class="edu-school">University of Washington</div>
+            div class="edu-school">University of Washington</div>
             <div class="edu-desc">Human-centered design, interaction design, and information systems. UX research, prototyping, and accessible digital experiences.</div>
           </div>
         </div>

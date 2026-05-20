@@ -1,0 +1,1088 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Katherine Zhang — UX/UI Designer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --cream: #F7F4EF;
+      --sage: #A8B9A0;
+      --sage-light: #C8D8C0;
+      --sage-dark: #6E8C65;
+      --dusty-rose: #C9A49A;
+      --dusty-blue: #8AABBC;
+      --warm-sand: #D4C4A8;
+      --charcoal: #2C2C2C;
+      --mid-gray: #6B6B6B;
+      --light-gray: #E8E4DE;
+      --white: #FFFFFF;
+      --accent: #7BA05B;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--cream);
+      color: var(--charcoal);
+      overflow-x: hidden;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.4rem 4rem;
+      background: rgba(247,244,239,0.88);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(168,185,160,0.25);
+      transition: all 0.3s ease;
+    }
+
+    .nav-logo {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.3rem;
+      color: var(--charcoal);
+      text-decoration: none;
+      letter-spacing: -0.02em;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2.4rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--mid-gray);
+      font-size: 0.88rem;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--accent); }
+
+    /* ── HERO ── */
+    #hero {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      padding: 7rem 4rem 4rem;
+      gap: 4rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-bg-blob {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(80px);
+      opacity: 0.35;
+      pointer-events: none;
+    }
+
+    .blob-1 {
+      width: 500px; height: 500px;
+      background: var(--sage-light);
+      top: -100px; right: -100px;
+      animation: floatBlob 8s ease-in-out infinite;
+    }
+
+    .blob-2 {
+      width: 350px; height: 350px;
+      background: var(--dusty-rose);
+      bottom: 50px; left: 200px;
+      animation: floatBlob 10s ease-in-out infinite reverse;
+    }
+
+    .blob-3 {
+      width: 250px; height: 250px;
+      background: var(--dusty-blue);
+      top: 200px; left: 50px;
+      animation: floatBlob 12s ease-in-out infinite;
+    }
+
+    @keyframes floatBlob {
+      0%, 100% { transform: translate(0,0) scale(1); }
+      33% { transform: translate(20px,-20px) scale(1.05); }
+      66% { transform: translate(-15px,15px) scale(0.97); }
+    }
+
+    .hero-text {
+      position: relative;
+      z-index: 2;
+      animation: fadeUp 0.9s ease both;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--sage-light);
+      color: var(--sage-dark);
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 0.4rem 1rem;
+      border-radius: 100px;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-tag::before {
+      content: '';
+      width: 7px; height: 7px;
+      background: var(--sage-dark);
+      border-radius: 50%;
+      animation: pulse 2s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.5; transform: scale(0.8); }
+    }
+
+    .hero-name {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(3rem, 6vw, 5.5rem);
+      line-height: 1.05;
+      letter-spacing: -0.03em;
+      color: var(--charcoal);
+      margin-bottom: 0.3rem;
+    }
+
+    .hero-name em {
+      font-style: italic;
+      color: var(--sage-dark);
+    }
+
+    .hero-subtitle {
+      font-size: 1.05rem;
+      color: var(--mid-gray);
+      line-height: 1.7;
+      margin-bottom: 2.5rem;
+      max-width: 440px;
+      font-weight: 300;
+    }
+
+    .hero-ctas {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--charcoal);
+      color: var(--cream);
+      padding: 0.85rem 2rem;
+      border-radius: 100px;
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(44,44,44,0.2); }
+
+    .btn-outline {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: transparent;
+      color: var(--charcoal);
+      padding: 0.85rem 2rem;
+      border-radius: 100px;
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      border: 1.5px solid var(--charcoal);
+      transition: transform 0.2s, background 0.2s, color 0.2s;
+    }
+
+    .btn-outline:hover { background: var(--charcoal); color: var(--cream); transform: translateY(-2px); }
+
+    .hero-visual {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      animation: fadeUp 0.9s 0.2s ease both;
+    }
+
+    .hero-photo-frame {
+      position: relative;
+      width: 340px;
+      height: 420px;
+    }
+
+    .hero-photo-bg {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, var(--sage-light) 0%, var(--dusty-blue) 100%);
+      border-radius: 40% 60% 60% 40% / 50% 40% 60% 50%;
+      animation: morphShape 8s ease-in-out infinite;
+    }
+
+    @keyframes morphShape {
+      0%, 100% { border-radius: 40% 60% 60% 40% / 50% 40% 60% 50%; }
+      25% { border-radius: 60% 40% 40% 60% / 40% 60% 40% 60%; }
+      50% { border-radius: 50% 50% 40% 60% / 60% 40% 60% 40%; }
+      75% { border-radius: 40% 60% 60% 40% / 40% 50% 60% 50%; }
+    }
+
+    .hero-photo-initials {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'DM Serif Display', serif;
+      font-size: 7rem;
+      color: rgba(255,255,255,0.6);
+      letter-spacing: -0.05em;
+    }
+
+    .hero-float-card {
+      position: absolute;
+      background: white;
+      border-radius: 16px;
+      padding: 0.8rem 1.2rem;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+      font-size: 0.8rem;
+    }
+
+    .card-1 {
+      bottom: 30px;
+      left: -40px;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .card-icon {
+      width: 32px; height: 32px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+    }
+
+    .card-icon.green { background: var(--sage-light); }
+    .card-icon.rose { background: #F2D4CF; }
+
+    .card-label { font-weight: 600; color: var(--charcoal); }
+    .card-sub { color: var(--mid-gray); font-size: 0.72rem; }
+
+    .card-2 {
+      top: 40px;
+      right: -30px;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    /* ── SECTION COMMONS ── */
+    section { padding: 6rem 4rem; }
+
+    .section-label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--sage-dark);
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .section-label::before {
+      content: '';
+      width: 24px; height: 2px;
+      background: var(--sage-dark);
+    }
+
+    .section-title {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      color: var(--charcoal);
+      margin-bottom: 1.5rem;
+    }
+
+    /* ── ABOUT ── */
+    #about {
+      background: var(--white);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: start;
+    }
+
+    .about-text p {
+      color: var(--mid-gray);
+      line-height: 1.8;
+      margin-bottom: 1.2rem;
+      font-size: 1rem;
+    }
+
+    .about-right { display: flex; flex-direction: column; gap: 2rem; }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .skill-chip {
+      background: var(--cream);
+      border: 1px solid var(--light-gray);
+      border-radius: 12px;
+      padding: 0.9rem 1.1rem;
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--charcoal);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: all 0.2s;
+    }
+
+    .skill-chip:hover {
+      border-color: var(--sage);
+      background: var(--sage-light);
+      transform: translateY(-2px);
+    }
+
+    .skill-chip .chip-icon { font-size: 1.1rem; }
+
+    .education-block { display: flex; flex-direction: column; gap: 1.2rem; }
+
+    .edu-item {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 1rem;
+      align-items: start;
+    }
+
+    .edu-year {
+      font-size: 0.78rem;
+      color: var(--sage-dark);
+      font-weight: 600;
+      background: var(--sage-light);
+      padding: 0.3rem 0.7rem;
+      border-radius: 100px;
+      white-space: nowrap;
+    }
+
+    .edu-details { }
+    .edu-degree { font-weight: 600; font-size: 0.95rem; }
+    .edu-school { color: var(--mid-gray); font-size: 0.85rem; margin-top: 0.2rem; }
+    .edu-desc { color: var(--mid-gray); font-size: 0.82rem; margin-top: 0.3rem; line-height: 1.5; }
+
+    /* ── WORK / PROJECTS ── */
+    #work { background: var(--cream); }
+
+    .work-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 3rem;
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+    }
+
+    .project-card {
+      background: var(--white);
+      border-radius: 24px;
+      overflow: hidden;
+      transition: transform 0.3s, box-shadow 0.3s;
+      cursor: pointer;
+      text-decoration: none;
+      color: inherit;
+      display: block;
+    }
+
+    .project-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+    }
+
+    .project-card.featured {
+      grid-column: span 2;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .project-img {
+      height: 240px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .project-card.featured .project-img {
+      height: 100%;
+      min-height: 280px;
+    }
+
+    .project-img.altamed { background: linear-gradient(135deg, #B8D4C8 0%, #8AABBC 100%); }
+    .project-img.rural { background: linear-gradient(135deg, #D4C4A8 0%, #C9A49A 100%); }
+    .project-img.pawpals { background: linear-gradient(135deg, #C8D8C0 0%, #A8B9A0 100%); }
+    .project-img.wander { background: linear-gradient(135deg, #BFC5D8 0%, #8AABBC 100%); }
+
+    .project-img-label {
+      position: absolute;
+      bottom: 16px; left: 16px;
+      background: rgba(255,255,255,0.85);
+      border-radius: 8px;
+      padding: 0.3rem 0.7rem;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--charcoal);
+    }
+
+    .project-info { padding: 1.8rem; }
+
+    .project-card.featured .project-info {
+      padding: 2.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .project-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .project-tag {
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      background: var(--cream);
+      color: var(--mid-gray);
+      padding: 0.25rem 0.7rem;
+      border-radius: 100px;
+    }
+
+    .project-title {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.3rem;
+      line-height: 1.3;
+      margin-bottom: 0.7rem;
+      color: var(--charcoal);
+    }
+
+    .project-card.featured .project-title { font-size: 1.8rem; }
+
+    .project-desc {
+      color: var(--mid-gray);
+      font-size: 0.88rem;
+      line-height: 1.65;
+      margin-bottom: 1.3rem;
+    }
+
+    .project-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    .project-link::after {
+      content: '→';
+      transition: transform 0.2s;
+    }
+
+    .project-card:hover .project-link::after { transform: translateX(4px); }
+
+    /* ── EXPERIENCE ── */
+    #experience {
+      background: var(--charcoal);
+      color: var(--cream);
+    }
+
+    #experience .section-label { color: var(--sage-light); }
+    #experience .section-label::before { background: var(--sage-light); }
+    #experience .section-title { color: var(--cream); }
+
+    .exp-list { display: flex; flex-direction: column; gap: 0; margin-top: 2.5rem; }
+
+    .exp-item {
+      display: grid;
+      grid-template-columns: 180px 1fr;
+      gap: 2rem;
+      padding: 2rem 0;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      transition: all 0.2s;
+    }
+
+    .exp-item:first-child { border-top: 1px solid rgba(255,255,255,0.1); }
+
+    .exp-item:hover { padding-left: 1rem; }
+
+    .exp-period {
+      font-size: 0.82rem;
+      color: var(--sage-light);
+      font-weight: 500;
+      padding-top: 0.2rem;
+    }
+
+    .exp-right { }
+
+    .exp-role {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.2rem;
+      color: var(--cream);
+      margin-bottom: 0.25rem;
+    }
+
+    .exp-company {
+      font-size: 0.85rem;
+      color: var(--sage-light);
+      margin-bottom: 0.7rem;
+    }
+
+    .exp-desc {
+      font-size: 0.88rem;
+      color: rgba(247,244,239,0.6);
+      line-height: 1.65;
+    }
+
+    /* ── CONTACT ── */
+    #contact {
+      background: var(--cream);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+    }
+
+    .contact-text p {
+      color: var(--mid-gray);
+      line-height: 1.7;
+      margin-bottom: 2rem;
+    }
+
+    .contact-links {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .contact-link-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      text-decoration: none;
+      color: var(--charcoal);
+      padding: 1rem 1.2rem;
+      border: 1.5px solid var(--light-gray);
+      border-radius: 14px;
+      transition: all 0.2s;
+    }
+
+    .contact-link-item:hover {
+      border-color: var(--sage);
+      background: var(--white);
+      transform: translateX(4px);
+    }
+
+    .contact-icon {
+      width: 40px; height: 40px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+
+    .contact-icon.green { background: var(--sage-light); }
+    .contact-icon.blue { background: #D4E4F0; }
+    .contact-icon.sand { background: var(--warm-sand); }
+
+    .contact-link-label { font-weight: 600; font-size: 0.9rem; }
+    .contact-link-value { color: var(--mid-gray); font-size: 0.8rem; }
+
+    /* Contact form side */
+    .contact-form-area { display: flex; flex-direction: column; gap: 1.2rem; }
+
+    .form-group { display: flex; flex-direction: column; gap: 0.4rem; }
+
+    .form-group label {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--mid-gray);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .form-group input,
+    .form-group textarea {
+      background: var(--white);
+      border: 1.5px solid var(--light-gray);
+      border-radius: 12px;
+      padding: 0.85rem 1.1rem;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.92rem;
+      color: var(--charcoal);
+      outline: none;
+      transition: border-color 0.2s;
+      resize: none;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      border-color: var(--sage);
+    }
+
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+
+    .form-submit {
+      background: var(--accent);
+      color: white;
+      border: none;
+      padding: 1rem 2rem;
+      border-radius: 100px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.92rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
+      align-self: flex-start;
+    }
+
+    .form-submit:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(123,160,91,0.35); }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--charcoal);
+      color: rgba(247,244,239,0.5);
+      text-align: center;
+      padding: 2.5rem 4rem;
+      font-size: 0.82rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    footer a { color: var(--sage-light); text-decoration: none; }
+
+    /* ── SCROLL REVEAL ── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.65s ease, transform 0.65s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      nav { padding: 1.2rem 2rem; }
+      .nav-links { gap: 1.5rem; }
+
+      section { padding: 4rem 2rem; }
+
+      #hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+        padding: 7rem 2rem 3rem;
+      }
+
+      .hero-ctas { justify-content: center; }
+      .hero-visual { display: none; }
+
+      #about { grid-template-columns: 1fr; gap: 2.5rem; }
+
+      .projects-grid { grid-template-columns: 1fr; }
+      .project-card.featured { grid-column: span 1; grid-template-columns: 1fr; }
+      .project-card.featured .project-img { min-height: 220px; }
+
+      .exp-item { grid-template-columns: 1fr; gap: 0.5rem; }
+
+      #contact { grid-template-columns: 1fr; gap: 3rem; }
+
+      footer { flex-direction: column; gap: 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="#hero" class="nav-logo">Katherine Zhang</a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#work">Work</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="hero-bg-blob blob-1"></div>
+    <div class="hero-bg-blob blob-2"></div>
+    <div class="hero-bg-blob blob-3"></div>
+
+    <div class="hero-text">
+      <div class="hero-tag">Available for opportunities</div>
+      <h1 class="hero-name">
+        Hi, I'm<br><em>Katherine</em><br>Zhang
+      </h1>
+      <p class="hero-subtitle">
+        UX/UI designer & Cornell MPS student passionate about inclusive, human-centered design that bridges research, strategy, and beautiful experiences.
+      </p>
+      <div class="hero-ctas">
+        <a href="#work" class="btn-primary">View My Work</a>
+        <a href="#contact" class="btn-outline">Get in Touch</a>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <div class="hero-photo-frame">
+        <div class="hero-photo-bg"></div>
+        <div class="hero-photo-initials">KZ</div>
+        <div class="hero-float-card card-1">
+          <div class="card-icon green">🎓</div>
+          <div>
+            <div class="card-label">Cornell University</div>
+            <div class="card-sub">MPS Information Science</div>
+          </div>
+        </div>
+        <div class="hero-float-card card-2">
+          <div class="card-icon rose">✦</div>
+          <div>
+            <div class="card-label">UX / UI Designer</div>
+            <div class="card-sub">4 projects & counting</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="about-text reveal">
+      <div class="section-label">About Me</div>
+      <h2 class="section-title">Design with<br><em style="font-family:'DM Serif Display',serif; font-style:italic;">purpose</em></h2>
+      <p>
+        I'm a product and UI/UX designer who cares deeply about how technology shapes everyday human experiences — especially designing systems that are thoughtful, inclusive, and accessible to people with different abilities and backgrounds.
+      </p>
+      <p>
+        My path started with Informatics at the University of Washington, where I first explored human-centered design. That curiosity led me to Cornell University, where I'm pursuing a Master of Professional Studies in Information Science, focusing on product design, interaction design, and user research.
+      </p>
+      <p>
+        Outside design, I love traveling, hiking, skiing, discovering new food spots, and spending time with dogs. The small details in everyday life — moments that feel effortless or unexpectedly frustrating — often spark my best design ideas.
+      </p>
+      <br/>
+      <a href="https://4d241fcc-e3b7-46f2-bdad-4612895bc294.filesusr.com/ugd/7f7c60_167bdbc7467d4dafa33e836a0bc2f8b8.pdf" target="_blank" class="btn-primary" style="width:fit-content;">
+        View Resume ↗
+      </a>
+    </div>
+
+    <div class="about-right reveal">
+      <div>
+        <div class="section-label">Skills</div>
+        <div class="skills-grid">
+          <div class="skill-chip"><span class="chip-icon">🎨</span> Figma</div>
+          <div class="skill-chip"><span class="chip-icon">🔍</span> UX Research</div>
+          <div class="skill-chip"><span class="chip-icon">📐</span> Interaction Design</div>
+          <div class="skill-chip"><span class="chip-icon">♿</span> Accessibility</div>
+          <div class="skill-chip"><span class="chip-icon">📊</span> Agile Planning</div>
+          <div class="skill-chip"><span class="chip-icon">🧪</span> Prototyping</div>
+          <div class="skill-chip"><span class="chip-icon">👥</span> Stakeholder Mgmt</div>
+          <div class="skill-chip"><span class="chip-icon">📝</span> Design Systems</div>
+        </div>
+      </div>
+
+      <div>
+        <div class="section-label">Education</div>
+        <div class="education-block">
+          <div class="edu-item">
+            <div class="edu-year">2025–Now</div>
+            <div class="edu-details">
+              <div class="edu-degree">M.P.S. Information Science</div>
+              <div class="edu-school">Cornell University</div>
+              <div class="edu-desc">Product design, interaction design, and user research. Focus on inclusive and human-centered digital systems.</div>
+            </div>
+          </div>
+          <div class="edu-item">
+            <div class="edu-year">2021–2025</div>
+            <div class="edu-details">
+              <div class="edu-degree">B.S. Informatics</div>
+              <div class="edu-school">University of Washington</div>
+              <div class="edu-desc">Human-centered design, interaction design, and information systems. UX research, prototyping, and accessible digital experiences.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WORK -->
+  <section id="work">
+    <div class="work-header reveal">
+      <div>
+        <div class="section-label">Selected Work</div>
+        <h2 class="section-title">Projects</h2>
+      </div>
+    </div>
+
+    <div class="projects-grid">
+      <!-- Featured -->
+      <a href="https://katherinezhang323.wixsite.com/project-portfolio/altamed-portal" target="_blank" class="project-card featured reveal">
+        <div class="project-img altamed">
+          <span>🏥</span>
+          <div class="project-img-label">Healthcare · UX/UI</div>
+        </div>
+        <div class="project-info">
+          <div class="project-tags">
+            <span class="project-tag">UX Research</span>
+            <span class="project-tag">Dashboard Design</span>
+            <span class="project-tag">Healthcare</span>
+          </div>
+          <div class="project-title">AltaMed Data & Analytics Portal</div>
+          <p class="project-desc">
+            Designed a centralized dashboard discovery platform for healthcare teams. As part of a Cornell × AltaMed collaboration, I investigated how employees discover and access dashboards, then designed a SharePoint-based portal supporting browsing, search, and streamlined access requests.
+          </p>
+          <span class="project-link">Explore Project</span>
+        </div>
+      </a>
+
+      <!-- Card 2 -->
+      <a href="https://katherinezhang323.wixsite.com/project-portfolio/vritual-health-platform" target="_blank" class="project-card reveal">
+        <div class="project-img rural">
+          <span>🌿</span>
+          <div class="project-img-label">Product Design</div>
+        </div>
+        <div class="project-info">
+          <div class="project-tags">
+            <span class="project-tag">Product Design</span>
+            <span class="project-tag">Accessibility</span>
+          </div>
+          <div class="project-title">Virtual Rural Healthcare Clinic</div>
+          <p class="project-desc">
+            A 12-week capstone designing a virtual healthcare portal for elderly residents in rural Washington, including an AI-supported clinic portal and dual go-to-market strategy.
+          </p>
+          <span class="project-link">Explore Project</span>
+        </div>
+      </a>
+
+      <!-- Card 3 -->
+      <a href="https://katherinezhang323.wixsite.com/project-portfolio/pawpal" target="_blank" class="project-card reveal">
+        <div class="project-img pawpals">
+          <span>🐾</span>
+          <div class="project-img-label">App Design</div>
+        </div>
+        <div class="project-info">
+          <div class="project-tags">
+            <span class="project-tag">App Design</span>
+            <span class="project-tag">Service Design</span>
+          </div>
+          <div class="project-title">PawPals — Pet Fostering App</div>
+          <p class="project-desc">
+            An online pet fostering platform connecting owners, venue providers, and carers using unused housing resources to offer professional pet care and logistics services.
+          </p>
+          <span class="project-link">Explore Project</span>
+        </div>
+      </a>
+
+      <!-- Card 4 -->
+      <a href="https://katherinezhang323.wixsite.com/project-portfolio/wanderpal" target="_blank" class="project-card reveal">
+        <div class="project-img wander">
+          <span>🧭</span>
+          <div class="project-img-label">Product Design</div>
+        </div>
+        <div class="project-info">
+          <div class="project-tags">
+            <span class="project-tag">Wearable</span>
+            <span class="project-tag">Assistive Tech</span>
+            <span class="project-tag">AI</span>
+          </div>
+          <div class="project-title">WanderPal — Wearable Navigation</div>
+          <p class="project-desc">
+            A wearable navigation device for visually impaired individuals using AI and tactile feedback to enhance safety and independent mobility. I led the mapping module and dataset collection.
+          </p>
+          <span class="project-link">Explore Project</span>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section id="experience">
+    <div class="reveal">
+      <div class="section-label">Background</div>
+      <h2 class="section-title">Experience</h2>
+    </div>
+
+    <div class="exp-list">
+      <div class="exp-item reveal">
+        <div class="exp-period">2025 – Present</div>
+        <div class="exp-right">
+          <div class="exp-role">UX/UI Designer & Researcher</div>
+          <div class="exp-company">Cornell × AltaMed Health Services Collaboration</div>
+          <div class="exp-desc">Designed a centralized Data & Analytics portal for internal healthcare teams. Led user research, stakeholder alignment, and end-to-end design of a SharePoint-based discovery platform.</div>
+        </div>
+      </div>
+      <div class="exp-item reveal">
+        <div class="exp-period">2025</div>
+        <div class="exp-right">
+          <div class="exp-role">Product Designer & Project Manager</div>
+          <div class="exp-company">Virtual Rural Health Capstone — Cornell University</div>
+          <div class="exp-desc">Led a 12-week capstone designing a virtual healthcare portal for elderly rural residents. Conducted policy and user research, coordinated UW Medicine stakeholder sessions, and produced a validated MVP.</div>
+        </div>
+      </div>
+      <div class="exp-item reveal">
+        <div class="exp-period">2021 – 2025</div>
+        <div class="exp-right">
+          <div class="exp-role">UX Research & Design Projects</div>
+          <div class="exp-company">University of Washington — Informatics Program</div>
+          <div class="exp-desc">Developed skills in UX research, prototyping, and accessible digital experience design across multiple coursework and independent projects, including PawPals and WanderPal.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="contact-text reveal">
+      <div class="section-label">Get in Touch</div>
+      <h2 class="section-title">Let's work<br><em style="font-family:'DM Serif Display',serif; font-style:italic;">together</em></h2>
+      <p>
+        I'm currently open to UX/UI design roles, internships, and collaborations. Whether you have a project in mind or just want to chat about design — I'd love to hear from you!
+      </p>
+      <div class="contact-links">
+        <a href="mailto:katherinezhang323@outlook.com" class="contact-link-item">
+          <div class="contact-icon sand">✉️</div>
+          <div>
+            <div class="contact-link-label">Email</div>
+            <div class="contact-link-value">katherinezhang323@outlook.com</div>
+          </div>
+        </a>
+        <a href="https://www.linkedin.com/in/kat-zhang-2189692b3/" target="_blank" class="contact-link-item">
+          <div class="contact-icon blue">💼</div>
+          <div>
+            <div class="contact-link-label">LinkedIn</div>
+            <div class="contact-link-value">kat-zhang-2189692b3</div>
+          </div>
+        </a>
+        <a href="tel:+12062287198" class="contact-link-item">
+          <div class="contact-icon green">📞</div>
+          <div>
+            <div class="contact-link-label">Phone</div>
+            <div class="contact-link-value">+1 (206) 228-7198</div>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <div class="contact-form-area reveal">
+      <div class="section-label">Send a Message</div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>First Name</label>
+          <input type="text" placeholder="Jane" />
+        </div>
+        <div class="form-group">
+          <label>Last Name</label>
+          <input type="text" placeholder="Doe" />
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Email</label>
+        <input type="email" placeholder="jane@example.com" />
+      </div>
+      <div class="form-group">
+        <label>Message</label>
+        <textarea rows="5" placeholder="Hi Katherine, I'd love to connect about..."></textarea>
+      </div>
+      <button class="form-submit" onclick="handleSubmit(event)">Send Message ✦</button>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <span>© 2025 Katherine Zhang. All rights reserved.</span>
+    <span>Designed & built with ♡ | <a href="https://www.linkedin.com/in/kat-zhang-2189692b3/" target="_blank">LinkedIn</a></span>
+  </footer>
+
+  <script>
+    // Scroll reveal
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => entry.target.classList.add('visible'), i * 80);
+        }
+      });
+    }, { threshold: 0.1 });
+    reveals.forEach(el => observer.observe(el));
+
+    // Sticky nav shadow
+    window.addEventListener('scroll', () => {
+      document.querySelector('nav').style.boxShadow =
+        window.scrollY > 20 ? '0 4px 20px rgba(0,0,0,0.07)' : 'none';
+    });
+
+    // Form submit
+    function handleSubmit(e) {
+      const btn = e.target;
+      btn.textContent = 'Sent! ✓';
+      btn.style.background = '#A8B9A0';
+      setTimeout(() => {
+        btn.textContent = 'Send Message ✦';
+        btn.style.background = '';
+      }, 3000);
+    }
+  </script>
+
+</body>
+</html>

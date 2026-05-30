@@ -127,6 +127,10 @@
     #work { background:var(--cream);padding:6rem 4rem; }
     .work-header { display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:3rem; }
     .projects-grid { display:grid;grid-template-columns:repeat(2,1fr);gap:1.8rem; }
+    .project-card.featured { grid-column:span 1;display:block; }
+    .project-card.featured .project-img { height:230px;min-height:unset; }
+    .project-card.featured .project-info { padding:1.8rem; }
+    .project-card.featured .project-title { font-size:1.25rem; }
 
     .project-card {
       background:var(--white);border-radius:24px;overflow:hidden;
@@ -289,7 +293,7 @@
   <div class="hero-visual">
     <div class="hero-photo-frame">
       <div class="hero-photo-bg" style="overflow:hidden;">
-        <img src="herophoto.png" style="width:100%;height:100%;object-fit:cover;object-position:center top;" />
+        <img src="assets/images/.jpg" style="width:100%;height:100%;object-fit:cover;object-position:center top;" />
       </div>
       <div class="hero-float-card card-1">
         <div class="card-icon green">🎓</div>
@@ -319,10 +323,10 @@
   <!-- Photo collage -->
   <div class="about-photos reveal">
     <div class="about-photo photo-main">
-      <img src="pic.jpg" alt="Katherine Zhang" />
+      <img src="assets/images/pic.jpg" alt="Katherine Zhang" />
     </div>
     <div class="about-photo photo-dog">
-      <img src="dog.jpg" alt="Katherine and her dog" />
+      <img src="assets/images/dog.jpg" alt="Katherine and her dog" />
       <div class="photo-caption">🐾 my little buddy - Lucky</div>
     </div>
     <div class="photo-sticker">✦ Cornell MPS '26</div>

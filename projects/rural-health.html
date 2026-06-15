@@ -23,16 +23,26 @@
     .project-section h2{font-family:'DM Serif Display',serif;font-size:1.8rem;letter-spacing:-0.02em;color:var(--charcoal);margin-bottom:1.2rem;}
     .project-section h3{font-size:1.1rem;font-weight:600;color:var(--charcoal);margin-bottom:0.6rem;margin-top:1.8rem;}
     .project-section p{color:var(--mid-gray);line-height:1.8;font-size:0.97rem;margin-bottom:1rem;}
-    .img-placeholder{width:100%;border-radius:20px;display:flex;flex-direction:column;align-items:center;justify-content:center;color:var(--sage-dark);gap:0.5rem;margin:2rem 0;}
-    .img-placeholder .ph-icon{font-size:2.5rem;} .img-placeholder .ph-label{font-size:0.82rem;font-weight:600;letter-spacing:0.06em;opacity:0.7;}
+    .project-section ul{color:var(--mid-gray);line-height:1.8;font-size:0.95rem;padding-left:1.4rem;margin-bottom:1rem;}
+    .project-section ul li{margin-bottom:0.4rem;}
     .two-col{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin:1.5rem 0;}
     .insight-card{background:var(--white);border:1px solid var(--light-gray);border-radius:16px;padding:1.5rem;}
     .insight-card .ic-num{font-family:'DM Serif Display',serif;font-size:2.2rem;color:var(--sage-dark);line-height:1;}
     .insight-card .ic-label{font-size:0.85rem;color:var(--mid-gray);margin-top:0.4rem;line-height:1.5;}
+    .insight-card .ic-title{font-size:0.9rem;font-weight:600;color:var(--charcoal);margin-top:0.3rem;margin-bottom:0.2rem;}
     .process-step{display:flex;gap:1.2rem;margin-bottom:1.5rem;align-items:flex-start;}
     .step-num{width:36px;height:36px;border-radius:50%;background:var(--sage-light);color:var(--sage-dark);font-weight:700;font-size:0.9rem;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:0.15rem;}
-    .step-content h4{font-weight:600;font-size:0.97rem;margin-bottom:0.3rem;} .step-content p{color:var(--mid-gray);font-size:0.88rem;line-height:1.6;margin:0;}
-    .callout{background:var(--cream);border-left:3px solid var(--sage);border-radius:0 12px 12px 0;padding:1.2rem 1.5rem;margin:1.5rem 0;font-style:italic;color:var(--mid-gray);font-size:0.95rem;line-height:1.7;}
+    .step-content h4{font-weight:600;font-size:0.97rem;margin-bottom:0.3rem;color:var(--charcoal);} .step-content p{color:var(--mid-gray);font-size:0.88rem;line-height:1.6;margin:0;}
+    .callout{background:var(--cream);border-left:3px solid var(--sage);border-radius:0 12px 12px 0;padding:1.2rem 1.5rem;margin:1.5rem 0;color:var(--mid-gray);font-size:0.95rem;line-height:1.7;}
+    .feature-block{background:var(--white);border:1px solid var(--light-gray);border-radius:20px;padding:2rem;margin-bottom:1.5rem;}
+    .feature-block-title{font-size:1rem;font-weight:700;color:var(--charcoal);margin-bottom:1.2rem;display:flex;align-items:center;gap:0.6rem;}
+    .feature-block-title .fb-tag{font-size:0.7rem;font-weight:600;letter-spacing:0.07em;text-transform:uppercase;background:var(--sage-light);color:var(--sage-dark);padding:0.2rem 0.65rem;border-radius:100px;}
+    .feature-list{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:0.55rem;}
+    .feature-list li{font-size:0.9rem;color:var(--mid-gray);display:flex;gap:0.6rem;align-items:flex-start;line-height:1.5;}
+    .feature-list li::before{content:'→';color:var(--sage-dark);font-weight:600;flex-shrink:0;margin-top:0.05rem;}
+    .feature-list li strong{color:var(--charcoal);font-weight:600;}
+    .hmw{background:var(--charcoal);border-radius:20px;padding:2.5rem;margin:2rem 0;}
+    .hmw p{font-family:'DM Serif Display',serif;font-size:1.3rem;line-height:1.6;color:var(--cream);font-style:italic;margin:0;}
     .project-nav-footer{background:var(--white);border-top:1px solid var(--light-gray);display:flex;justify-content:space-between;align-items:center;padding:2rem 4rem;}
     .pnf-link{text-decoration:none;color:var(--mid-gray);font-size:0.85rem;font-weight:500;display:flex;align-items:center;gap:0.5rem;transition:color 0.2s;}
     .pnf-link:hover{color:var(--accent);}
@@ -63,81 +73,164 @@
 </nav>
 
 <div class="project-hero" style="background:linear-gradient(135deg,#D4C4A8 0%,#C9A49A 100%);">
+  <img src="../assets/images/rural_hero.jpg" alt="Virtual Rural Health Clinic platform overview" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;object-position:center;z-index:0;" />
+  <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(212,196,168,0.90) 0%,rgba(212,196,168,0.40) 55%,transparent 100%);z-index:1;"></div>
   <a href="../index.html#work" class="project-hero-back">← Back to Work</a>
-  <div class="project-hero-emoji">🌿</div>
   <div class="project-hero-tags">
-    <span class="project-hero-tag">Product Design</span>
+    <span class="project-hero-tag">AI + Healthcare</span>
     <span class="project-hero-tag">Accessibility</span>
-    <span class="project-hero-tag">Healthcare</span>
-    <span class="project-hero-tag">12-Week Capstone</span>
+    <span class="project-hero-tag">Product Design</span>
+    <span class="project-hero-tag">10-Week Capstone</span>
   </div>
   <h1 class="project-hero-title">Virtual Rural Healthcare Clinic</h1>
-  <p class="project-hero-sub">Designing an accessible AI-supported healthcare portal for elderly residents in rural Washington.</p>
+  <p class="project-hero-sub">Designing AI-powered access to geriatric care in rural communities.</p>
 </div>
 
 <div class="project-meta-bar">
-  <div class="meta-item"><div class="meta-label">Role</div><div class="meta-value">Product Designer & PM</div></div>
-  <div class="meta-item"><div class="meta-label">Timeline</div><div class="meta-value">12 Weeks, 2025</div></div>
-  <div class="meta-item"><div class="meta-label">Partner</div><div class="meta-value">UW Medicine</div></div>
-  <div class="meta-item"><div class="meta-label">Tools</div><div class="meta-value">Figma · Miro · Notion</div></div>
+  <div class="meta-item"><div class="meta-label">Role</div><div class="meta-value">UX/UI Designer · Researcher · Project Lead · Frontend Dev</div></div>
+  <div class="meta-item"><div class="meta-label">Timeline</div><div class="meta-value">Spring 2025 · 10 Weeks</div></div>
+  <div class="meta-item"><div class="meta-label">Team</div><div class="meta-value">2 People</div></div>
+  <div class="meta-item"><div class="meta-label">Tools</div><div class="meta-value">Figma · React · OpenAI API · Lovable AI</div></div>
 </div>
 
 <div class="project-body">
+
   <div class="project-section reveal">
     <h2>Overview</h2>
-    <p>This 12-week capstone project focused on designing a virtual healthcare portal for elderly residents in rural Washington state — a population with limited access to in-person medical care and significant barriers to digital health tools.</p>
-    <p>Acting as both UX Researcher/Product Designer and Project Manager, I led a team through policy research, user research, concept design, prototyping, and stakeholder validation with UW Medicine. The final solution included a validated MVP and a dual go-to-market strategy.</p>
+    <p>Improving healthcare accessibility for elderly patients in Adams County, WA through AI, voice interaction, and simplified UX. Over 10 weeks, my team of two designed and prototyped a two-sided virtual care platform connecting rural elderly patients with providers — addressing geographic isolation, digital exclusion, and chronic care management gaps in one of Washington's most underserved counties.</p>
   </div>
 
   <div class="project-section reveal">
     <h2>The Problem</h2>
-    <div class="callout">"Rural seniors face a double barrier: geographic isolation AND digital exclusion. Most telehealth platforms aren't built for them."</div>
-    <p>Rural Washington counties have physician shortages, limited transportation, and high proportions of elderly residents with chronic conditions. Existing telehealth solutions assume high digital literacy and reliable broadband — assumptions that don't hold for this population.</p>
-  </div>
+    <p>Rural elderly patients are left out of digital healthcare. We focused on rural communities in Washington State, where access to healthcare remains uneven due to geographic and resource constraints. After scoping the problem, we narrowed to <strong>Adams County</strong> — a representative rural region with significant healthcare access challenges.</p>
 
-  <div class="project-section reveal">
-    <h2>Research Process</h2>
-    <div class="process-step"><div class="step-num">1</div><div class="step-content"><h4>Policy & Landscape Research</h4><p>Analyzed rural health policy, Washington state Medicaid telehealth coverage rules, and existing rural health initiatives to understand systemic constraints.</p></div></div>
-    <div class="process-step"><div class="step-num">2</div><div class="step-content"><h4>User Research</h4><p>Conducted interviews and surveys with [X] rural elderly residents and [X] healthcare providers to understand needs, barriers, and existing behaviors.</p></div></div>
-    <div class="process-step"><div class="step-num">3</div><div class="step-content"><h4>Stakeholder Sessions with UW Medicine</h4><p>Coordinated co-design sessions with UW Medicine clinicians and administrators to validate clinical workflows and technical feasibility.</p></div></div>
-    <div class="process-step"><div class="step-num">4</div><div class="step-content"><h4>Design & Validation</h4><p>Produced wireframes, an accessible high-fidelity prototype, and user-tested with target population to validate usability and comprehension.</p></div></div>
-    <div class="img-placeholder" style="height:300px;background:linear-gradient(135deg,#D4C4A8,#C9A49A);">
-      <div class="ph-icon">🗺️</div><div class="ph-label">Add your research map, journey map, or affinity diagram here</div>
+    <h3>Why Adams County?</h3>
+    <ul>
+      <li><strong>Provider shortage:</strong> Limited healthcare facilities and specialists force residents to travel long distances for care.</li>
+      <li><strong>Aging population:</strong> A growing proportion of residents are aged 65+, increasing demand for chronic disease management and geriatric services.</li>
+      <li><strong>Rural barriers:</strong> Transportation limitations, lower income levels, and limited broadband access further restrict healthcare access.</li>
+      <li><strong>Healthcare disparities:</strong> Rural counties in Washington consistently show lower access to preventive care and higher unmet medical needs compared to urban areas.</li>
+    </ul>
+
+    <img src="../assets/images/rural_problem.jpg" alt="Rural healthcare access challenges in Adams County" style="width:100%;border-radius:16px;box-shadow:0 8px 32px rgba(0,0,0,0.1);display:block;margin:1.5rem 0;" />
+
+    <div class="hmw">
+      <p>"How might we design an accessible, AI-supported healthcare experience that enables elderly patients in rural areas to receive timely, continuous care despite limited local resources?"</p>
     </div>
   </div>
 
   <div class="project-section reveal">
-    <h2>Design Solution</h2>
-    <p>The portal was designed around three core principles: simplicity for low-digital-literacy users, AI-assisted triage to reduce clinical burden, and accessibility compliance for elderly users with vision/motor impairments.</p>
-    <div class="img-placeholder" style="height:420px;background:linear-gradient(135deg,#D4C4A8,#C9A49A);">
-      <div class="ph-icon">🖥️</div><div class="ph-label">Add your final prototype screenshots here</div>
+    <h2>User Research</h2>
+    <p>We conducted heuristic evaluations and user interviews with elderly rural residents and healthcare providers to understand real pain points, existing behaviors, and trust barriers. Four key insights shaped our design direction:</p>
+    <div class="two-col">
+      <div class="insight-card">
+        <div class="ic-num">01</div>
+        <div class="ic-title">Voice over typing</div>
+        <div class="ic-label">Users strongly preferred voice interaction — typing was a significant friction point for elderly users with limited digital experience or motor difficulties.</div>
+      </div>
+      <div class="insight-card">
+        <div class="ic-num">02</div>
+        <div class="ic-title">Concrete navigation labels</div>
+        <div class="ic-label">Abstract labels like "Dashboard" or "Portal" caused confusion. Users needed plain-language, task-oriented navigation to orient themselves.</div>
+      </div>
+      <div class="insight-card">
+        <div class="ic-num">03</div>
+        <div class="ic-title">Scheduling & video are high-friction</div>
+        <div class="ic-label">Booking appointments and joining video calls were the two highest-dropout moments. Both required multi-step flows users couldn't complete independently.</div>
+      </div>
+      <div class="insight-card">
+        <div class="ic-num">04</div>
+        <div class="ic-title">AI trust requires transparency</div>
+        <div class="ic-label">Users were willing to engage with AI assistance, but only when outputs were clearly explained and users felt in control of the interaction.</div>
+      </div>
     </div>
-    <h3>Key Feature — Simplified Onboarding</h3>
-    <p>Designed a guided onboarding flow with large text, audio support options, and a caregiver proxy mode for users who need assistance setting up their account.</p>
-    <h3>Key Feature — AI-Assisted Symptom Check</h3>
-    <p>A conversational AI triage tool helps patients describe symptoms in plain language, routing them to the appropriate care level and reducing unnecessary emergency visits.</p>
-    <h3>Key Feature — Accessible Video Visit Interface</h3>
-    <p>Redesigned the video consultation UI for large touch targets, high contrast, and simplified controls based on observed behaviors of elderly users.</p>
   </div>
 
   <div class="project-section reveal">
-    <h2>Go-to-Market Strategy</h2>
-    <p>Developed a dual strategy: a short-term pilot through rural critical access hospitals, and a long-term partnership model with Washington state Medicaid. Add more detail about your specific recommendations here.</p>
+    <h2>Design Process</h2>
+    <p>After user research, we used <strong>Lovable AI</strong> to accelerate early-stage prototyping and UI exploration — generating initial layout structures and interface variations, then manually refining them in Figma for accessibility, clarity, and usability. This let us move quickly while keeping all design decisions human-centered and grounded in user needs.</p>
+    <div class="process-step">
+      <div class="step-num">1</div>
+      <div class="step-content"><h4>Generate & Explore</h4><p>Used Lovable AI to generate initial layout structures and explore multiple interface directions rapidly before committing to a direction.</p></div>
+    </div>
+    <div class="process-step">
+      <div class="step-num">2</div>
+      <div class="step-content"><h4>Refine in Figma</h4><p>Manually refined AI-generated outputs for accessibility, contrast, touch target sizing, and plain-language copy tailored to elderly users.</p></div>
+    </div>
+    <div class="process-step">
+      <div class="step-num">3</div>
+      <div class="step-content"><h4>Test & Iterate</h4><p>Ran multiple rounds of usability testing with target users, prioritizing scheduling, video visit, and AI triage flows.</p></div>
+    </div>
+    <div class="process-step">
+      <div class="step-num">4</div>
+      <div class="step-content"><h4>Build with React</h4><p>Implemented the validated prototype using React and OpenAI API integration to produce a functional, testable MVP.</p></div>
+    </div>
+    <img src="../assets/images/rural_IA.jpg" alt="Information architecture diagram for the Virtual Rural Health Clinic" style="width:100%;border-radius:16px;border:1px solid var(--light-gray);display:block;margin-top:2rem;" />
+  </div>
+
+  <div class="project-section reveal">
+    <h2>The Solution — A Two-Sided Platform</h2>
+    <p>The final design is a connected care system with two distinct experiences: an accessible patient-facing portal and a workflow-focused provider dashboard — both integrated through shared data and AI-powered insights.</p>
+
+    <img src="../assets/images/rural_solution.png" alt="Two-sided platform architecture overview" style="width:100%;border-radius:16px;box-shadow:0 8px 32px rgba(0,0,0,0.1);display:block;margin:1.5rem 0 2rem;" />
+
+    <div class="feature-block">
+      <div class="feature-block-title">Patient Side <span class="fb-tag">For Elderly Rural Residents</span></div>
+      <ul class="feature-list">
+        <li><strong>AI onboarding & triage</strong> → collects patient information and guides users through initial intake in plain language</li>
+        <li><strong>LLM-powered medical Q&A</strong> → provides instant, easy-to-understand health guidance without requiring a scheduled visit</li>
+        <li><strong>Voice-to-text assistant</strong> → enables hands-free interaction for low-tech users or those with motor difficulties</li>
+        <li><strong>Appointment scheduling</strong> → simple, step-by-step booking and management with minimal cognitive load</li>
+        <li><strong>Medical records access</strong> → allows patients to view reports and history in plain language</li>
+        <li><strong>Medication management</strong> → reminders, refill requests, and educational support</li>
+        <li><strong>Mental health support</strong> → AI-driven screening and resource recommendations</li>
+      </ul>
+    </div>
+
+    <div class="feature-block">
+      <div class="feature-block-title">Provider Side <span class="fb-tag">For Rural Clinicians</span></div>
+      <ul class="feature-list">
+        <li><strong>Dashboard overview</strong> → quick view of appointments, tasks, and patient updates in one place</li>
+        <li><strong>Appointment management</strong> → track upcoming consultations and patient status across the day</li>
+        <li><strong>Patient record access</strong> → view medical history and intake information before and during visits</li>
+        <li><strong>AI-assisted insights</strong> → analyze patient symptoms from voice and text inputs to support clinical decision-making</li>
+        <li><strong>Voice recording review</strong> → listen to and evaluate patient-submitted recordings asynchronously</li>
+        <li><strong>Report generation</strong> → document findings and follow-ups efficiently with AI drafting support</li>
+        <li><strong>Task & notification system</strong> → prioritize pending reviews and patient needs</li>
+      </ul>
+    </div>
+
+    <img src="../assets/images/rural_interface.png" alt="Virtual Rural Health Clinic interface screens" style="width:100%;border-radius:16px;box-shadow:0 8px 32px rgba(0,0,0,0.1);display:block;margin:2rem 0 1.5rem;" />
+
+    <div class="callout">A connected care system that improves access for elderly rural patients while reducing friction for providers — meeting both sides where they are.</div>
   </div>
 
   <div class="project-section reveal">
     <h2>Outcomes & Reflection</h2>
     <div class="two-col">
-      <div class="insight-card"><div class="ic-num">✦</div><div class="ic-label">Outcome 1 — add your result here</div></div>
-      <div class="insight-card"><div class="ic-num">✦</div><div class="ic-label">Outcome 2 — add your result here</div></div>
+      <div class="insight-card">
+        <div class="ic-num">✦</div>
+        <div class="ic-title">Functional MVP</div>
+        <div class="ic-label">Delivered a working React prototype with real OpenAI API integration, not just a static mockup.</div>
+      </div>
+      <div class="insight-card">
+        <div class="ic-num">✦</div>
+        <div class="ic-title">AI-accelerated workflow</div>
+        <div class="ic-label">Lovable AI + Figma iteration cycle significantly compressed prototyping time while maintaining design quality.</div>
+      </div>
     </div>
-    <p style="margin-top:1.5rem;">What did you learn as both a designer and a project manager? What tradeoffs did you navigate between clinical requirements and user experience?</p>
+    <p style="margin-top:1.5rem;">This project pushed me to balance competing constraints: clinical accuracy vs. plain-language simplicity, AI automation vs. user trust, and feature breadth vs. cognitive load for elderly users. Leading a two-person team as both designer and project lead taught me how to scope ruthlessly and ship a coherent experience under time pressure.</p>
+    <a href="https://github.com/chrisli777/rural-gentlecare-portal/tree/main" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:0.5rem;margin-top:1.2rem;padding:0.65rem 1.4rem;background:var(--charcoal);color:var(--cream);border-radius:100px;font-size:0.88rem;font-weight:600;text-decoration:none;transition:opacity 0.2s;" onmouseover="this.style.opacity='0.8'" onmouseout="this.style.opacity='1'">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+      View GitHub Repo
+    </a>
   </div>
+
 </div>
 
 <div class="project-nav-footer">
-  <href="projects/altamed.html" class="pnf-link">← AltaMed Portal</a>
-  <a href="projects/pawpals.html" class="pnf-link">Next: PawPals →</a>
+  <a href="altamed.html" class="pnf-link">← AltaMed Portal</a>
+  <a href="pawpals.html" class="pnf-link">Next: PawPals →</a>
 </div>
 <footer><span>© 2025 Katherine Zhang.</span><span><a href="https://www.linkedin.com/in/kat-zhang-2189692b3/" target="_blank">LinkedIn</a></span></footer>
 <script>

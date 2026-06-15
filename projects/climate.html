@@ -69,7 +69,6 @@
 
 <div class="project-hero" style="background:linear-gradient(135deg,#C4D4B8 0%,#8ABC9E 100%);">
   <a href="../index.html#work" class="project-hero-back">← Back to Work</a>
-  <div class="project-hero-emoji">🌍</div>
   <div class="project-hero-tags">
     <span class="project-hero-tag">Data Visualization</span>
     <span class="project-hero-tag">Scrollytelling</span>
@@ -129,8 +128,23 @@
     <h3>Scrollytelling Mechanics</h3>
     <p>Built with Quarto, the story uses scroll-triggered chart transitions to animate the shift between metrics. As readers scroll through each chapter, the visualization updates to show the same seven countries through a new lens — making the comparison visceral and immediate rather than abstract.</p>
 
-    <div class="img-placeholder" style="height:360px;background:linear-gradient(135deg,#C4D4B8,#8ABC9E);color:#4a7a52;">
-      <div class="ph-icon">📈</div><div class="ph-label">Add screenshots of the scrollytelling visualizations here (charts, transitions, epilogue)</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;margin:2rem 0;">
+      <div>
+        <img src="../assets/images/climate_01_total.png" alt="Lens 1: Annual total CO₂ emissions by country 1900–2024" style="width:100%;border-radius:14px;border:1px solid var(--light-gray);display:block;"/>
+        <p style="font-size:.75rem;color:var(--mid-gray);text-align:center;margin:.5rem 0 0;font-weight:500;">Lens 1 — Total Emissions</p>
+      </div>
+      <div>
+        <img src="../assets/images/climate_02_percapita.png" alt="Lens 2: CO₂ emissions per capita by country 1900–2024" style="width:100%;border-radius:14px;border:1px solid var(--light-gray);display:block;"/>
+        <p style="font-size:.75rem;color:var(--mid-gray);text-align:center;margin:.5rem 0 0;font-weight:500;">Lens 2 — Per Capita</p>
+      </div>
+      <div>
+        <img src="../assets/images/climate_03_cumulative.png" alt="Lens 3: Cumulative CO₂ emissions by country as of 2024" style="width:100%;border-radius:14px;border:1px solid var(--light-gray);display:block;"/>
+        <p style="font-size:.75rem;color:var(--mid-gray);text-align:center;margin:.5rem 0 0;font-weight:500;">Lens 3 — Cumulative Historical</p>
+      </div>
+      <div>
+        <img src="../assets/images/climate_04_consumption.png" alt="Lens 4: Consumption vs production-based CO₂ emissions" style="width:100%;border-radius:14px;border:1px solid var(--light-gray);display:block;"/>
+        <p style="font-size:.75rem;color:var(--mid-gray);text-align:center;margin:.5rem 0 0;font-weight:500;">Lens 4 — Consumption vs. Production</p>
+      </div>
     </div>
 
     <h3>Visual Design Choices</h3>

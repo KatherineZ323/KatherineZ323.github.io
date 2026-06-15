@@ -150,7 +150,7 @@
     .project-img.pawpals{background:#7BA05B;}
     .project-img.wander{background:#1B2E3C;}
     .project-img.climate{background:linear-gradient(135deg,#C4D4B8 0%,#8ABC9E 100%);}
-    .project-img.game{background:linear-gradient(135deg,#D4BEC8 0%,#BC8AA8 100%);}
+    .project-img.game{background:#1A1410;}
 
     .project-img-label {
       position:absolute;bottom:14px;left:14px;
@@ -436,11 +436,15 @@
     </a>
     <a href="projects/olympians.html" class="project-card reveal" style="grid-column:span 2;">
       <div style="display:grid;grid-template-columns:1fr 1fr;">
-        <div class="project-img game" style="height:100%;min-height:220px;"><span>🏛️</span><div class="project-img-label">Game Design · iOS</div></div>
+        <div class="project-img game" style="height:100%;min-height:220px;position:relative;overflow:hidden;">
+          <img src="assets/images/Display Image.png" alt="Olympians" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center center;">
+          <div style="position:absolute;inset:0;background:linear-gradient(to right,rgba(26,20,16,0.3) 0%,transparent 60%);"></div>
+          <div class="project-img-label">Game Design · iOS</div>
+        </div>
         <div class="project-info" style="display:flex;flex-direction:column;justify-content:center;">
           <div class="project-tags"><span class="project-tag academic">Game Design</span><span class="project-tag academic">iOS</span><span class="project-tag academic">TestFlight</span></div>
           <div class="project-title" style="font-size:1.75rem;">Olympians</div>
-          <p class="project-desc">An iOS game designed and built as part of a game design course, now available on TestFlight. Inspired by Greek mythology and Olympic competition, blending strategy and storytelling.</p>
+          <p class="project-desc">A multiplayer cooperative party game set in Greek mythology — players unite as demigods to defeat powerful bosses through real-time coordination, item management, and strategic teamwork. Built for INFO 5152: Advanced Game Design, available on TestFlight.</p>
           <span class="project-link">Explore Project</span>
         </div>
       </div>

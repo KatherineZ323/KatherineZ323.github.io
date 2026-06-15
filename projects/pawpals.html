@@ -5,38 +5,92 @@
   <title>PawPals — Katherine Zhang</title>
   <link rel="stylesheet" href="../style.css"/>
   <style>
-    .project-hero{min-height:60vh;display:flex;flex-direction:column;justify-content:flex-end;padding:8rem 4rem 4rem;position:relative;overflow:hidden;}
-    .project-hero-back{position:absolute;top:2rem;left:4rem;display:flex;align-items:center;gap:.5rem;text-decoration:none;color:rgba(44,44,44,.7);font-size:.85rem;font-weight:500;transition:color .2s;z-index:2;}
-    .project-hero-back:hover{color:var(--charcoal);}
-    .project-hero-emoji{font-size:5rem;margin-bottom:1.5rem;position:relative;z-index:2;}
+    .project-hero{min-height:65vh;display:flex;flex-direction:column;justify-content:flex-end;padding:8rem 4rem 4rem;position:relative;overflow:hidden;}
+    .project-hero-back{position:absolute;top:2rem;left:4rem;display:flex;align-items:center;gap:.5rem;text-decoration:none;color:rgba(255,255,255,.85);font-size:.85rem;font-weight:500;transition:color .2s;z-index:2;}
+    .project-hero-back:hover{color:#fff;}
     .project-hero-tags{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:1.2rem;position:relative;z-index:2;}
     .project-hero-tag{background:rgba(255,255,255,.75);color:var(--charcoal);font-size:.72rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:.3rem .8rem;border-radius:100px;}
-    .project-hero-title{font-family:'DM Serif Display',serif;font-size:clamp(2.2rem,5vw,4rem);line-height:1.1;letter-spacing:-.03em;color:var(--charcoal);position:relative;z-index:2;max-width:700px;}
-    .project-hero-sub{font-size:1.05rem;color:rgba(44,44,44,.7);margin-top:.8rem;max-width:600px;position:relative;z-index:2;line-height:1.6;}
+    .project-hero-title{font-family:'DM Serif Display',serif;font-size:clamp(2.4rem,5vw,4.2rem);line-height:1.05;letter-spacing:-.03em;color:#fff;position:relative;z-index:2;max-width:720px;text-shadow:0 2px 20px rgba(0,0,0,.25);}
+    .project-hero-sub{font-size:1.05rem;color:rgba(255,255,255,.88);margin-top:.9rem;max-width:580px;position:relative;z-index:2;line-height:1.65;text-shadow:0 1px 8px rgba(0,0,0,.2);}
+
     .project-meta-bar{background:var(--white);display:grid;grid-template-columns:repeat(4,1fr);border-bottom:1px solid var(--light-gray);}
     .meta-item{padding:1.8rem 2rem;border-right:1px solid var(--light-gray);}
     .meta-item:last-child{border-right:none;}
-    .meta-label{font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--mid-gray);margin-bottom:.4rem;}
-    .meta-value{font-size:.95rem;font-weight:500;color:var(--charcoal);}
-    .project-body{max-width:820px;margin:0 auto;padding:5rem 2rem;}
-    .project-section{margin-bottom:4rem;}
-    .project-section h2{font-family:'DM Serif Display',serif;font-size:1.8rem;letter-spacing:-.02em;color:var(--charcoal);margin-bottom:1.2rem;}
-    .project-section h3{font-size:1.1rem;font-weight:600;color:var(--charcoal);margin-bottom:.6rem;margin-top:1.8rem;}
-    .project-section p{color:var(--mid-gray);line-height:1.8;font-size:.97rem;margin-bottom:1rem;}
-    .img-placeholder{width:100%;border-radius:20px;display:flex;flex-direction:column;align-items:center;justify-content:center;color:var(--sage-dark);gap:.5rem;margin:2rem 0;}
-    .img-placeholder .ph-icon{font-size:2.5rem;}.img-placeholder .ph-label{font-size:.82rem;font-weight:600;letter-spacing:.06em;opacity:.7;text-align:center;padding:0 2rem;}
-    .two-col{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin:1.5rem 0;}
-    .insight-card{background:var(--white);border:1px solid var(--light-gray);border-radius:16px;padding:1.5rem;}
-    .insight-card .ic-num{font-family:'DM Serif Display',serif;font-size:2.2rem;color:var(--sage-dark);line-height:1;}
-    .insight-card .ic-label{font-size:.85rem;color:var(--mid-gray);margin-top:.4rem;line-height:1.5;}
-    .process-step{display:flex;gap:1.2rem;margin-bottom:1.5rem;align-items:flex-start;}
-    .step-num{width:36px;height:36px;border-radius:50%;background:var(--sage-light);color:var(--sage-dark);font-weight:700;font-size:.9rem;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:.15rem;}
-    .step-content h4{font-weight:600;font-size:.97rem;margin-bottom:.3rem;}.step-content p{color:var(--mid-gray);font-size:.88rem;line-height:1.6;margin:0;}
-    .callout{background:var(--cream);border-left:3px solid var(--sage);border-radius:0 12px 12px 0;padding:1.2rem 1.5rem;margin:1.5rem 0;font-style:italic;color:var(--mid-gray);font-size:.95rem;line-height:1.7;}
+    .meta-label{font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--mid-gray);margin-bottom:.4rem;}
+    .meta-value{font-size:.92rem;font-weight:500;color:var(--charcoal);line-height:1.4;}
+
+    .project-body{max-width:860px;margin:0 auto;padding:5rem 2rem;}
+    .project-section{margin-bottom:4.5rem;}
+    .project-section h2{font-family:'DM Serif Display',serif;font-size:1.9rem;letter-spacing:-.02em;color:var(--charcoal);margin-bottom:1.2rem;}
+    .project-section h3{font-size:1.05rem;font-weight:700;color:var(--charcoal);margin-bottom:.5rem;margin-top:2rem;}
+    .project-section p{color:var(--mid-gray);line-height:1.85;font-size:.97rem;margin-bottom:1rem;}
+    .project-section ul{color:var(--mid-gray);line-height:1.8;font-size:.95rem;padding-left:1.4rem;margin-bottom:1rem;}
+    .project-section ul li{margin-bottom:.4rem;}
+
+    .section-label-mini{font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--sage-dark);margin-bottom:.7rem;display:flex;align-items:center;gap:.5rem;}
+    .section-label-mini::before{content:'';width:20px;height:2px;background:var(--sage-dark);border-radius:2px;}
+
+    .callout{background:var(--cream);border-left:3px solid var(--sage);border-radius:0 14px 14px 0;padding:1.3rem 1.6rem;margin:1.5rem 0;color:var(--charcoal);font-size:1rem;line-height:1.7;font-style:italic;}
+
+    /* Stat cards */
+    .stat-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;margin:2rem 0;}
+    .stat-card{background:var(--white);border:1px solid var(--light-gray);border-radius:18px;padding:1.6rem 1.8rem;position:relative;overflow:hidden;}
+    .stat-card::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,var(--sage-light) 0%,transparent 60%);opacity:.3;}
+    .stat-num{font-family:'DM Serif Display',serif;font-size:2.8rem;color:var(--sage-dark);line-height:1;position:relative;}
+    .stat-label{font-size:.85rem;color:var(--mid-gray);margin-top:.5rem;line-height:1.5;position:relative;}
+
+    /* Insight cards */
+    .insight-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;margin:1.5rem 0;}
+    .insight-card{background:var(--white);border:1px solid var(--light-gray);border-radius:16px;padding:1.4rem 1.6rem;}
+    .insight-card .ic-icon{font-size:1.3rem;margin-bottom:.6rem;}
+    .insight-card .ic-title{font-size:.92rem;font-weight:700;color:var(--charcoal);margin-bottom:.3rem;}
+    .insight-card .ic-body{font-size:.84rem;color:var(--mid-gray);line-height:1.55;}
+
+    /* Process steps */
+    .process-step{display:flex;gap:1.2rem;margin-bottom:1.4rem;align-items:flex-start;}
+    .step-num{width:34px;height:34px;border-radius:50%;background:var(--sage-light);color:var(--sage-dark);font-weight:700;font-size:.85rem;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:.1rem;}
+    .step-content h4{font-weight:700;font-size:.95rem;margin-bottom:.25rem;color:var(--charcoal);}
+    .step-content p{color:var(--mid-gray);font-size:.88rem;line-height:1.6;margin:0;}
+
+    /* Images */
+    .project-img-full{width:100%;border-radius:18px;box-shadow:0 8px 40px rgba(0,0,0,.1);display:block;margin:2rem 0;}
+    .project-img-full.border{box-shadow:none;border:1px solid var(--light-gray);}
+    .img-caption{font-size:.78rem;color:var(--mid-gray);text-align:center;margin-top:-.8rem;margin-bottom:2rem;font-weight:500;letter-spacing:.03em;}
+
+    /* Two col */
+    .two-col{display:grid;grid-template-columns:1fr 1fr;gap:1.4rem;margin:1.5rem 0;}
+
+    /* Research safari */
+    .safari-phase{border:1px solid var(--light-gray);border-radius:18px;padding:1.6rem;margin-bottom:1.2rem;background:var(--white);}
+    .safari-phase-label{font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--sage-dark);background:var(--sage-light);display:inline-block;padding:.25rem .75rem;border-radius:100px;margin-bottom:.8rem;}
+    .safari-phase h4{font-size:.97rem;font-weight:700;color:var(--charcoal);margin-bottom:.5rem;}
+    .safari-phase p{font-size:.88rem;color:var(--mid-gray);line-height:1.65;margin:0 0 .5rem;}
+    .safari-phase p:last-child{margin:0;}
+
+    /* Business model */
+    .model-card{background:var(--charcoal);border-radius:22px;padding:2.5rem;margin:2rem 0;color:var(--cream);}
+    .model-card h3{font-family:'DM Serif Display',serif;font-size:1.6rem;color:#fff;margin-bottom:.8rem;}
+    .model-card p{color:rgba(247,244,239,.8);font-size:.95rem;line-height:1.75;margin:0;}
+
+    /* Outcome cards */
+    .outcome-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;margin:1.5rem 0;}
+    .outcome-card{background:var(--sage-light);border-radius:16px;padding:1.4rem;}
+    .outcome-card .oc-icon{font-size:1.2rem;margin-bottom:.5rem;}
+    .outcome-card .oc-title{font-size:.9rem;font-weight:700;color:var(--charcoal);margin-bottom:.3rem;}
+    .outcome-card .oc-body{font-size:.83rem;color:var(--sage-dark);line-height:1.5;}
+
     .project-nav-footer{background:var(--white);border-top:1px solid var(--light-gray);display:flex;justify-content:space-between;align-items:center;padding:2rem 4rem;}
     .pnf-link{text-decoration:none;color:var(--mid-gray);font-size:.85rem;font-weight:500;display:flex;align-items:center;gap:.5rem;transition:color .2s;}
     .pnf-link:hover{color:var(--accent);}
-    @media(max-width:900px){.project-hero{padding:7rem 2rem 3rem;}.project-hero-back{left:2rem;}.project-meta-bar{grid-template-columns:1fr 1fr;}.meta-item:nth-child(2){border-right:none;}.two-col{grid-template-columns:1fr;}.project-nav-footer{padding:2rem;flex-direction:column;gap:1rem;text-align:center;}}
+
+    @media(max-width:900px){
+      .project-hero{padding:7rem 2rem 3rem;}
+      .project-hero-back{left:2rem;}
+      .project-meta-bar{grid-template-columns:1fr 1fr;}
+      .meta-item:nth-child(2){border-right:none;}
+      .stat-grid,.insight-grid,.two-col,.outcome-grid{grid-template-columns:1fr;}
+      .project-nav-footer{padding:2rem;flex-direction:column;gap:1rem;text-align:center;}
+    }
   </style>
 </head>
 <body>
@@ -62,93 +116,256 @@
   </ul>
 </nav>
 
-<div class="project-hero" style="background:linear-gradient(135deg,#C8D8C0 0%,#A8B9A0 100%);">
+<div class="project-hero" style="background:#7BA05B;">
+  <img src="../assets/images/pawpals_final.jpg" alt="PawPals app final design" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center top;z-index:0;"/>
+  <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(43,70,35,0.88) 0%,rgba(43,70,35,0.45) 55%,rgba(43,70,35,0.15) 100%);z-index:1;"></div>
   <a href="../index.html#work" class="project-hero-back">← Back to Work</a>
-  <div class="project-hero-emoji">🐾</div>
   <div class="project-hero-tags">
-    <span class="project-hero-tag">App Design</span>
-    <span class="project-hero-tag">Service Design</span>
-    <span class="project-hero-tag">Platform</span>
+    <span class="project-hero-tag">Marketplace Design</span>
+    <span class="project-hero-tag">Sharing Economy</span>
+    <span class="project-hero-tag">Pet Care</span>
+    <span class="project-hero-tag">Personal Project</span>
   </div>
-  <h1 class="project-hero-title">PawPals — Pet Fostering App</h1>
-  <p class="project-hero-sub">Connecting pet owners, venue providers, and carers through an online pet fostering platform that utilizes unused housing resources.</p>
+  <h1 class="project-hero-title">PawPals</h1>
+  <p class="project-hero-sub">A pet boarding and fostering platform that connects pet owners with caregivers and underutilized housing resources — building a community-driven, trust-first care economy.</p>
 </div>
 
 <div class="project-meta-bar">
-  <div class="meta-item"><div class="meta-label">Role</div><div class="meta-value">UX Designer</div></div>
-  <div class="meta-item"><div class="meta-label">Timeline</div><div class="meta-value">[Add timeline]</div></div>
-  <div class="meta-item"><div class="meta-label">Team</div><div class="meta-value">[Add team size]</div></div>
-  <div class="meta-item"><div class="meta-label">Tools</div><div class="meta-value">Figma · [Add tools]</div></div>
+  <div class="meta-item"><div class="meta-label">Role</div><div class="meta-value">Product Designer · UX/UI · Research</div></div>
+  <div class="meta-item"><div class="meta-label">Timeline</div><div class="meta-value">10 Weeks</div></div>
+  <div class="meta-item"><div class="meta-label">Type</div><div class="meta-value">Personal Project</div></div>
+  <div class="meta-item"><div class="meta-label">Tools</div><div class="meta-value">Figma · Illustrator</div></div>
 </div>
 
 <div class="project-body">
 
+  <!-- Overview -->
   <div class="project-section reveal">
-    <h2>Overview</h2>
-    <p>PawPals is an online pet fostering platform that connects pet owners, venue providers, and carers. It utilizes unused housing resources to offer professional pet care and pick-up/drop-off services, addressing issues like limited foster locations and unclear quality standards.</p>
-    <p>The platform earns revenue through service fees and an online shop, creating a safe, efficient, and community-driven pet fostering ecosystem. My role focused on designing the end-to-end user experience across the three user types: owners, carers, and venue providers.</p>
+    <div class="section-label-mini">Overview</div>
+    <h2>Pet boarding, reimagined as a sharing economy</h2>
+    <p>PawPals is a pet boarding and fostering platform that connects pet owners with caregivers and underutilized housing resources. It addresses challenges in finding reliable boarding services — especially during peak demand periods — by introducing a community-driven, resource-sharing model.</p>
+    <p>The platform earns revenue through service fees and an integrated online shop, creating a safe, efficient, and community-first fostering ecosystem. My role covered the full design process: research, business model design, UX/UI, and prototype.</p>
   </div>
 
+  <!-- Background -->
   <div class="project-section reveal">
-    <h2>The Problem</h2>
-    <div class="callout">"Finding a trustworthy, available pet foster on short notice is stressful — and most existing solutions feel like Craigslist for animals."</div>
-    <p>Pet owners face a fragmented, trust-deficit market when looking for temporary care. Existing options (kennels, friends, informal apps) lack transparency around carer qualifications, real-time availability, and pickup logistics. Meanwhile, people with space and willingness to care for pets have no structured way to offer their services.</p>
-    <div class="two-col">
-      <div class="insight-card"><div class="ic-num">✦</div><div class="ic-label">Key pain point 1 — add your research finding here (e.g., trust, availability, logistics)</div></div>
-      <div class="insight-card"><div class="ic-num">✦</div><div class="ic-label">Key pain point 2 — add another user need or frustration from your research</div></div>
+    <div class="section-label-mini">Background</div>
+    <h2>A growing market with a trust and supply problem</h2>
+    <div class="callout">"Pet owners have a hard time finding convenient and reliable pet boarding."</div>
+
+    <p>There is a growing demand for safe, convenient, and reliable boarding services among younger pet owners due to work, study, and travel. The pet boarding market is expected to grow at <strong>9.0% CAGR</strong> from 2021 to 2028.</p>
+
+    <img src="../assets/images/pawpals_market.png" alt="Pet boarding market growth data" class="project-img-full border"/>
+    <p class="img-caption">Market growth trend in pet boarding services</p>
+
+    <p>With a high vacancy rate of <strong>12–20%</strong> in many parts of China, there is a large amount of unused housing — offering significant potential for innovative pet boarding models.</p>
+
+    <img src="../assets/images/pawpals_vacancy.png" alt="Housing vacancy rates in China" class="project-img-full border"/>
+    <p class="img-caption">Housing vacancy rates creating an untapped resource opportunity</p>
+
+    <h3>The 2023 Catalyst</h3>
+    <p>In 2023, the social media trend of "college students walking dogs for others" inspired a new opportunity: integrating idle housing resources with professional pet care services. This approach addresses the supply-demand gap during holidays while creating additional income for property owners and pet caretakers — a win-win for all parties.</p>
+
+    <h3>2024 Policy Tailwind</h3>
+    <p>A 2024 report in China Construction News further highlighted that innovative use of unused housing resources can effectively meet diversified resident needs — providing policy support for combining idle housing with pet boarding services, and demonstrating its feasibility and social value.</p>
+  </div>
+
+  <!-- Research -->
+  <div class="project-section reveal">
+    <div class="section-label-mini">User Research</div>
+    <h2>Service Safari — living the user experience</h2>
+    <p>I conducted a service safari, going through the full pet boarding process as a real customer to uncover friction points firsthand across four phases.</p>
+
+    <div class="safari-phase">
+      <div class="safari-phase-label">Phase 1 — Pre-visit: Searching</div>
+      <h4>Scattered information, limited options</h4>
+      <p>Most boarding providers are mixed-service shops (e.g., pet grooming stores, vet clinics, catteries) with limited boarding options and inconvenient locations. Choices for pet owners are severely restricted.</p>
+      <p>Most providers only accept small cats and dogs under 5kg. There are almost no options for boarding large dogs.</p>
+    </div>
+
+    <div class="safari-phase">
+      <div class="safari-phase-label">Phase 2 — Pre-visit: Selecting</div>
+      <h4>Comparing across platforms is exhausting</h4>
+      <p>Comparing options requires switching between platforms. Prices are tiered by pet weight. Family-style boarding is 10–20 RMB cheaper than pet shops but lacks efficient filtering for suitable options.</p>
+    </div>
+
+    <img src="../assets/images/pawpals_research_journey.jpg" alt="Service safari research journey map" class="project-img-full"/>
+    <p class="img-caption">Research journey across the boarding discovery and booking process</p>
+
+    <div class="safari-phase">
+      <div class="safari-phase-label">Phase 3 — Pre-visit: Making Enquiries</div>
+      <h4>Trust issues with family-style boarding</h4>
+      <p>I reached out to a family-style boarding provider on Xiaohongshu, expressing my needs and asking for details. Family-style boarding feels cozier and more economical — but lacks formal agreements or guarantees, creating significant safety concerns.</p>
+    </div>
+
+    <div class="safari-phase">
+      <div class="safari-phase-label">Phase 4 — Observing the Environment</div>
+      <h4>Warm atmosphere, but lacking safety guarantees</h4>
+      <p>Photos from the provider showed a home environment in a residential area — warm and cozy, suitable for active pets that need companionship. However, family-style boarding often lacks safety guarantees and standardized facilities.</p>
+    </div>
+
+    <div class="two-col" style="margin-top:2rem;">
+      <img src="../assets/images/pawpals_research_2b.png" alt="Research observation: boarding environment" class="project-img-full border" style="margin:0;"/>
+      <img src="../assets/images/pawpals_research_2a.png" alt="Research observation: platform comparison" class="project-img-full border" style="margin:0;"/>
+    </div>
+    <p class="img-caption">Field observations from service safari sessions</p>
+  </div>
+
+  <!-- Survey -->
+  <div class="project-section reveal">
+    <div class="section-label-mini">Survey Findings</div>
+    <h2>115 responses confirmed the problem at scale</h2>
+
+    <div class="stat-grid">
+      <div class="stat-card">
+        <div class="stat-num">67%</div>
+        <div class="stat-label">of pet owners reported difficulty finding reliable pet boarding services</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">73%</div>
+        <div class="stat-label">expressed concerns about safety and professionalism in home-based boarding</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">84%</div>
+        <div class="stat-label">struggled to find affordable boarding options during holidays</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">58%</div>
+        <div class="stat-label">showed interest in innovative boarding solutions using idle housing resources</div>
+      </div>
+    </div>
+
+    <img src="../assets/images/pawpals_survey_chart.png" alt="Survey results bar chart" class="project-img-full border"/>
+    <p class="img-caption">Survey findings across 115 valid responses</p>
+  </div>
+
+  <!-- Insights -->
+  <div class="project-section reveal">
+    <div class="section-label-mini">Research Insights</div>
+    <h2>Four insights that shaped the design</h2>
+    <div class="insight-grid">
+      <div class="insight-card">
+        <div class="ic-icon">🔒</div>
+        <div class="ic-title">Trust is the biggest barrier, not availability</div>
+        <div class="ic-body">Users could find options — they just couldn't verify them. Trust signals matter more than volume of listings.</div>
+      </div>
+      <div class="insight-card">
+        <div class="ic-icon">📅</div>
+        <div class="ic-title">Holiday demand creates system-level pressure</div>
+        <div class="ic-body">Peak demand periods expose supply gaps that existing platforms have no mechanism to address.</div>
+      </div>
+      <div class="insight-card">
+        <div class="ic-icon">🏠</div>
+        <div class="ic-title">Home-based boarding is appealing but lacks credibility signals</div>
+        <div class="ic-body">Coziness is valued — but without formal vetting or guarantees, it feels risky. A structured home-boarding option could win both.</div>
+      </div>
+      <div class="insight-card">
+        <div class="ic-icon">🤝</div>
+        <div class="ic-title">Users are open to community models if trust is solved</div>
+        <div class="ic-body">58% were interested in novel models — the opportunity exists if the platform can credibly solve the trust problem.</div>
+      </div>
     </div>
   </div>
 
+  <!-- Business Model -->
   <div class="project-section reveal">
-    <h2>Research Process</h2>
-    <div class="process-step"><div class="step-num">1</div><div class="step-content"><h4>User Interviews</h4><p>Interviewed pet owners, current pet sitters, and people with available space to understand motivations, barriers, and trust signals across each user group.</p></div></div>
-    <div class="process-step"><div class="step-num">2</div><div class="step-content"><h4>Competitive Analysis</h4><p>Analyzed platforms like Rover, PetBacker, and Pawshake to identify gaps in trust infrastructure, logistics support, and venue utilization.</p></div></div>
-    <div class="process-step"><div class="step-num">3</div><div class="step-content"><h4>Service Blueprint</h4><p>Mapped the end-to-end service across all three user types to identify touchpoints, pain points, and opportunities for a smoother fostering experience.</p></div></div>
-    <div class="process-step"><div class="step-num">4</div><div class="step-content"><h4>Wireframing & Prototyping</h4><p>Designed flows for booking, carer verification, real-time tracking, and the marketplace shop, iterating based on peer feedback and testing.</p></div></div>
-    <div class="img-placeholder" style="height:300px;background:linear-gradient(135deg,#C8D8C0,#A8B9A0);">
-      <div class="ph-icon">🗺️</div><div class="ph-label">Add your service blueprint, user journey map, or affinity diagram here</div>
+    <div class="section-label-mini">Solution</div>
+    <h2>NestShare — a new boarding business model</h2>
+    <p>I designed an innovative business model called <strong>NestShare</strong>: a low-cost, flexible, and standardized pet boarding service platform that utilizes unused houses in the city and pairs them with verified pet butlers.</p>
+
+    <div class="model-card">
+      <h3>NestShare Model</h3>
+      <p>Idle housing resources + vetted pet carers + structured platform trust layer = a scalable, community-driven boarding network that works for owners, carers, and property holders alike.</p>
     </div>
+
+    <img src="../assets/images/pawpals_business_model.jpg" alt="NestShare business model diagram" class="project-img-full"/>
+    <p class="img-caption">NestShare business model: connecting idle housing, pet carers, and owners</p>
   </div>
 
+  <!-- Design Process -->
   <div class="project-section reveal">
-    <h2>Design Solution</h2>
-    <p>PawPals features three distinct app experiences — one for each user type — connected through a shared matching and logistics layer. Here are the key design decisions:</p>
+    <div class="section-label-mini">Design Process</div>
+    <h2>From sketch to high-fidelity prototype</h2>
 
-    <div class="img-placeholder" style="height:420px;background:linear-gradient(135deg,#C8D8C0,#A8B9A0);">
-      <div class="ph-icon">📱</div><div class="ph-label">Add your final app design screenshots here</div>
+    <div class="process-step">
+      <div class="step-num">1</div>
+      <div class="step-content"><h4>Information Architecture</h4><p>Mapped user flows across three roles — pet owners, carers, and venue providers — to identify shared touchpoints and divergent needs.</p></div>
+    </div>
+    <div class="process-step">
+      <div class="step-num">2</div>
+      <div class="step-content"><h4>Sketching & Low-fi Wireframes</h4><p>Explored multiple layout directions for the booking flow, carer verification screens, and real-time tracking interface.</p></div>
+    </div>
+    <div class="process-step">
+      <div class="step-num">3</div>
+      <div class="step-content"><h4>High-Fidelity Design in Figma</h4><p>Refined into a polished UI system with consistent components — cards, badges, filters, and status indicators — across all three user experiences.</p></div>
+    </div>
+    <div class="process-step">
+      <div class="step-num">4</div>
+      <div class="step-content"><h4>Prototype & Iteration</h4><p>Built interactive prototypes in Figma and iterated based on peer feedback, focusing on the booking and carer-discovery flows.</p></div>
     </div>
 
-    <h3>Feature 1 — Verified Carer Profiles</h3>
-    <p>Each carer undergoes a structured verification process with background checks, pet care certifications, and space photos. Trust badges surface key signals to reduce owner anxiety during the booking decision.</p>
-
-    <h3>Feature 2 — Smart Matching & Availability</h3>
-    <p>Owners can search by proximity, pet type compatibility, available dates, and real-time carer status. The matching algorithm factors in pet personality and carer experience to reduce mismatches.</p>
-
-    <h3>Feature 3 — Logistics & Pick-up/Drop-off</h3>
-    <p>Integrated pick-up and drop-off scheduling with live map tracking reduces the logistics burden on owners and professionalizes the experience for carers. Add more detail about how this flow was designed.</p>
-
-    <h3>Feature 4 — Online Shop</h3>
-    <p>A curated marketplace for pet supplies allows carers and owners to purchase essentials, creating an additional revenue stream and keeping users within the ecosystem.</p>
-
-    <div class="img-placeholder" style="height:300px;background:linear-gradient(135deg,#C8D8C0,#A8B9A0);">
-      <div class="ph-icon">🖼️</div><div class="ph-label">Add additional screens, flow diagrams, or prototype stills here</div>
-    </div>
+    <img src="../assets/images/pawpals_sketch.png" alt="PawPals early sketches and wireframes" class="project-img-full border"/>
+    <p class="img-caption">Early sketches and wireframe explorations</p>
   </div>
 
+  <!-- Final Design -->
   <div class="project-section reveal">
-    <h2>Outcomes & Reflection</h2>
-    <div class="two-col">
-      <div class="insight-card"><div class="ic-num">✦</div><div class="ic-label">Outcome 1 — add your result or validation finding here</div></div>
-      <div class="insight-card"><div class="ic-num">✦</div><div class="ic-label">Outcome 2 — add another result, e.g., usability test score or feedback</div></div>
+    <div class="section-label-mini">Final Design</div>
+    <h2>The PawPals app</h2>
+    <p>The final design delivers a platform experience connecting all three stakeholders — pet owners browse and book verified carers, carers manage bookings and track income, and venue providers list and manage their spaces — all in a single connected ecosystem.</p>
+
+    <img src="../assets/images/pawpals_final.jpg" alt="PawPals final app design screens" class="project-img-full"/>
+    <p class="img-caption">Final high-fidelity screens across key user flows</p>
+
+    <h3>Verified Carer Profiles</h3>
+    <p>Each carer undergoes a structured vetting process with background checks, pet care certifications, and space photos. Trust badges surface key signals to reduce owner anxiety during the booking decision.</p>
+
+    <h3>Smart Matching & Availability</h3>
+    <p>Owners search by proximity, pet type compatibility, available dates, and real-time carer status. The system factors in pet personality and carer experience to reduce mismatches.</p>
+
+    <h3>Logistics & Pick-up / Drop-off</h3>
+    <p>Integrated pick-up and drop-off scheduling with live map tracking reduces logistics burden on owners and professionalizes the experience for carers.</p>
+
+    <h3>Integrated Online Shop</h3>
+    <p>A curated marketplace for pet supplies creates an additional revenue stream and keeps users within the ecosystem — benefiting carers, owners, and platform sustainability.</p>
+  </div>
+
+  <!-- Outcomes -->
+  <div class="project-section reveal">
+    <div class="section-label-mini">Outcomes & Reflection</div>
+    <h2>What this project taught me</h2>
+
+    <div class="outcome-grid">
+      <div class="outcome-card">
+        <div class="oc-icon">🏗️</div>
+        <div class="oc-title">Multi-sided marketplace design</div>
+        <div class="oc-body">Designing for three distinct user types within a single platform requires carefully sequenced onboarding and separate — but connected — information hierarchies.</div>
+      </div>
+      <div class="outcome-card">
+        <div class="oc-icon">🔐</div>
+        <div class="oc-title">Trust as a design surface</div>
+        <div class="oc-body">The research made clear that trust isn't just a feature — it's the entire value proposition. Every UI decision needed to reinforce credibility signals.</div>
+      </div>
+      <div class="outcome-card">
+        <div class="oc-icon">🔄</div>
+        <div class="oc-title">Resource-sharing as a design model</div>
+        <div class="oc-body">Mapping idle housing to unmet pet care demand showed how systemic design thinking can unlock solutions that traditional product thinking would miss.</div>
+      </div>
+      <div class="outcome-card">
+        <div class="oc-icon">📊</div>
+        <div class="oc-title">Research-to-design continuity</div>
+        <div class="oc-body">The service safari and survey findings directly shaped every key feature — a reminder that rigorous research makes design decisions faster, not slower.</div>
+      </div>
     </div>
-    <p style="margin-top:1.5rem;">What did this project teach you about designing multi-sided marketplace platforms? What were the hardest tradeoffs between the three user types?</p>
+
+    <p style="margin-top:1.5rem;">The hardest tradeoff was balancing simplicity for first-time users with enough information density for experienced pet owners comparing carers. A progressive disclosure approach — showing essential info first, with details on demand — resolved this tension without sacrificing trust signals.</p>
   </div>
 
 </div>
 
 <div class="project-nav-footer">
-  <a href="projects/rural-health.htmll" class="pnf-link">← Virtual Rural Health</a>
-  <a href="projects/wanderpal.html" class="pnf-link">Next: WanderPal →</a>
+  <a href="rural-health.html" class="pnf-link">← Virtual Rural Health</a>
+  <a href="wanderpal.html" class="pnf-link">Next: WanderPal →</a>
 </div>
 <footer><span>© 2025 Katherine Zhang.</span><span><a href="https://www.linkedin.com/in/kat-zhang-2189692b3/" target="_blank">LinkedIn</a></span></footer>
 <script>

@@ -246,13 +246,27 @@
 
     <h3>God Houses</h3>
     <p>The game features nine God Houses, each representing a distinct Greek deity with unique abilities, visual identity, and role in gameplay. Players align with a house at the start of each session, shaping their strategy and the items available to them.</p>
-    <img src="../assets/images/olympians_god_houses.png" alt="Nine God Houses in Olympians" class="full-img"/>
-    <p class="img-cap">The nine God Houses — each deity brings a distinct playstyle and visual identity</p>
+    <img src="../assets/images/olympians_houses.png" alt="Nine God Houses in Olympians" class="full-img" style="background:#3A3530;border-radius:16px;"/>
+    <p class="img-cap">Zeus · Aphrodite · Hecate · Demeter · Athena · Poseidon · Ares · Hephaestus · Hermes</p>
 
-    <h3>Tokens & Power-Ups</h3>
-    <p>The token system is central to the cooperative loop. Items are tiered and typed — players must recognize and react to tokens quickly during real-time play, so each token's visual design had to be immediately readable at a glance.</p>
-    <img src="../assets/images/olympians_tokens.png" alt="Olympians item tokens and power-ups" class="full-img"/>
-    <p class="img-cap">Token library — organized by tier and type, designed for instant recognition under pressure</p>
+    <h3>Token Tiers</h3>
+    <p>The token system is the core of the cooperative loop. Items come in three tiers — each more powerful and rarer than the last. Players must recognize tokens instantly during chaotic play, so visual clarity and tier differentiation were critical design constraints.</p>
+
+    <div style="display:flex;flex-direction:column;gap:1rem;margin:1.5rem 0;">
+      <div style="background:#3A3530;border-radius:14px;padding:1.2rem 1.5rem;">
+        <div style="font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#9A9A8A;margin-bottom:.8rem;">Common</div>
+        <img src="../assets/images/olympians_commons.png" alt="Common tokens" style="width:100%;display:block;border-radius:8px;"/>
+      </div>
+      <div style="background:#2E2410;border-radius:14px;padding:1.2rem 1.5rem;border:1px solid rgba(201,164,74,.2);">
+        <div style="font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-bottom:.8rem;">Rare</div>
+        <img src="../assets/images/olympians_rare.png" alt="Rare tokens" style="width:100%;display:block;border-radius:8px;"/>
+      </div>
+      <div style="background:#1A1020;border-radius:14px;padding:1.2rem 1.5rem;border:1px solid rgba(160,100,220,.25);">
+        <div style="font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#C8A0E8;margin-bottom:.8rem;">Divine</div>
+        <img src="../assets/images/olympians_divine.png" alt="Divine tokens" style="width:100%;display:block;border-radius:8px;"/>
+      </div>
+    </div>
+    <p class="img-cap">Three token tiers — each escalating in power, rarity, and visual weight</p>
   </div>
 
   <!-- Gameplay Video -->
@@ -260,19 +274,15 @@
     <h2>Gameplay</h2>
     <p>Watch a short clip of Olympians in action — players coordinating in real time, passing items, and defeating a boss together.</p>
     <video controls playsinline style="width:100%;border-radius:16px;background:#1A1410;display:block;margin:1.5rem 0;" poster="../assets/images/Display Image.png">
-      <source src="../assets/videos/olympians_gameplay.mp4" type="video/mp4">
+      <source src="../assets/videos/olympinas_video.mp4" type="video/mp4">
       Your browser does not support the video tag.
     </video>
 
-    <div style="margin-top:1.5rem;display:flex;gap:1.5rem;align-items:flex-start;flex-wrap:wrap;">
-      <div style="flex:1;min-width:220px;">
-        <h3 style="margin-top:0;">QR Code Poster</h3>
-        <p>Scan to download Olympians via TestFlight directly on your iOS device.</p>
-        <a href="https://testflight.apple.com/join/CWaX6mhm" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:.5rem;background:var(--myth-dark);color:var(--gold-light);font-size:.85rem;font-weight:600;padding:.65rem 1.3rem;border-radius:100px;text-decoration:none;border:1px solid rgba(201,164,74,.3);">Join TestFlight ↗</a>
-      </div>
-      <div style="flex:0 0 auto;">
-        <img src="../assets/images/olympians_qr_poster.png" alt="Olympians TestFlight QR Code" style="width:160px;border-radius:12px;display:block;"/>
-      </div>
+    <h3>Download & Play</h3>
+    <p>Scan the QR code or tap the link to download Olympians via TestFlight on iOS.</p>
+    <div style="display:flex;gap:2rem;align-items:center;background:#0D0D0D;border-radius:16px;padding:1.5rem 2rem;margin:1.2rem 0;flex-wrap:wrap;">
+      <img src="../assets/images/olympians_qr.jpg" alt="Olympians TestFlight QR Code poster" style="flex:1;min-width:240px;max-width:100%;border-radius:10px;display:block;"/>
+      <a href="https://testflight.apple.com/join/CWaX6mhm" target="_blank" rel="noopener" class="btn-gold" style="flex-shrink:0;">Join TestFlight ↗</a>
     </div>
   </div>
 
